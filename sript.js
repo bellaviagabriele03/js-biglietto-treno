@@ -32,9 +32,24 @@
 
 // DATI: ETA' , KILOMETRI, SCONTO 20%, sCONTO 40%, PREZZO BIGLIETTO 
 
-
 // ESECUZIONE: CHIEDERE ALL'UTENTE L'ETA' E I KILOMETRI CHE VUOLE PERCORRERE ATTRAVERSO IL PROMPT 
+
+let eta = prompt("inserisci l'età");
+let kilometri = prompt("inserisci i kilometri");
+
+eta = parseInt(eta);
+
+kilometri = parseFloat(kilometri);
+
+
+
+
 // CALCOLARE: IL PREZZO DEL BIGLIETTO MOLTIPLICANDO 0.21 PER I KM DATI DALL'UTENTE 
+
+let prezzoBiglietto = kilometri * 0.21;
+
+
+
 // APPLICARE LO SCONTO IN BASE ALL'ETA' DATA : 
 //      SE ETA' MINORE DI 18
 //      PRENDI IL PREZZO CALCOLATO DIVIDILO PER 20 E MOLTIPLICALO PER 100,
@@ -42,4 +57,18 @@
 // STAMPARE IL PREZZO FINALE
 
 
+let risultato = "";
+
+
+if (eta < 18) {
+    risultato = (prezzoBiglietto * 80) / 100;
+} else if (eta > 65) {
+    risultato = (prezzoBiglietto * 60) / 100;
+} else
+    risultato = prezzoBiglietto;
+
+  
+
+
+console.log(`il tuo prezzo sarà ${risultato}`);
 
