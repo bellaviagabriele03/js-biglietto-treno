@@ -41,12 +41,17 @@ eta = parseInt(eta);
 
 kilometri = parseFloat(kilometri);
 
+//controllo per utente sui dati che aggiunge dal prompt
+
+if (isNaN(eta) === true || isNaN(kilometri) === true) || (eta < 0) || (kilometri < 0) {
+    console.log("Errore!, Inserisci dei numeri ");
+
+} else
 
 
 
 // CALCOLARE: IL PREZZO DEL BIGLIETTO MOLTIPLICANDO 0.21 PER I KM DATI DALL'UTENTE 
 
-let prezzoBiglietto = kilometri * 0.21;
 
 
 
@@ -56,19 +61,22 @@ let prezzoBiglietto = kilometri * 0.21;
 //          ALTRIMENTI PRENDI IL PREZZO CALCOLATO E DIVIDILO PER 40 E MOLTIPLICALO PER 100
 // STAMPARE IL PREZZO FINALE
 
-
 let risultato = "";
 
 
 if (eta < 18) {
+    //calcolo sconto 20% per minorenni 
     risultato = (prezzoBiglietto * 80) / 100;
-} else if (eta > 65) {
+} else if (eta >= 65) {
+    //calcolo sconto del 40% per over 65
     risultato = (prezzoBiglietto * 60) / 100;
 } else
     risultato = prezzoBiglietto;
 
-  
 
 
-console.log(`il tuo prezzo sarà ${risultato}`);
+
+console.log(`il tuo prezzo sarà ${risultato.toFixed(2)}`);
+
+
 
